@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\DotNetCraft.DevTools.SimpleQueue.Core\DotNetCraft.DevTools.SimpleQueue.Core.csproj" />
+  </ItemGroup>
+
+</Project>

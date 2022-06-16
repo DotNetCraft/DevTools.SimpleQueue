@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DotNetCraft.DevTools.Common\src\DotNetCraft.DevTools.Repositories.Abstraction\DotNetCraft.DevTools.Repositories.Abstraction.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Business\Common\" />
+    <Folder Include="Business\Clients\" />
+    <Folder Include="Specifications\" />
+  </ItemGroup>
+
+</Project>

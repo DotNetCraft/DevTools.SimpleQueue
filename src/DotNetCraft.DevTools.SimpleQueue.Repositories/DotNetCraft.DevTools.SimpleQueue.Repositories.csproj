@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.25" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DotNetCraft.DevTools.Common\src\DotNetCraft.DevTools.Repositories.Sql\DotNetCraft.DevTools.Repositories.Sql.csproj" />
+    <ProjectReference Include="..\DotNetCraft.DevTools.SimpleQueue.Core\DotNetCraft.DevTools.SimpleQueue.Core.csproj" />
+  </ItemGroup>
+
+</Project>
