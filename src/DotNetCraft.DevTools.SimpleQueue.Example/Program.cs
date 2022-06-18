@@ -22,14 +22,8 @@ namespace DotNetCraft.DevTools.SimpleQueue.Example
 
         static async Task Main(string[] args)
         {
-            var host = CreateDefaultBuilder().Build();
-
-            var sp = host.Services;
-
-            using (var serverHealthWorker = sp.GetService<IServerHealthCheckWorker>())
+            using (var host = CreateDefaultBuilder().Build())
             {
-                await serverHealthWorker.Start(_mainCts.Token);
-
                 await host.RunAsync();
             }
         }
@@ -41,7 +35,8 @@ namespace DotNetCraft.DevTools.SimpleQueue.Example
                 {
                     app.AddJsonFile("appsettings.json");
                 })
-                .ConfigureServices(RegisterServices);
+                .ConfigureServices(RegisterServices)
+                .UseConsoleLifetime();
         }
 
         private static void RegisterServices(HostBuilderContext hostBuilderContext, IServiceCollection services)
@@ -71,8 +66,10 @@ namespace DotNetCraft.DevTools.SimpleQueue.Example
 
             #endregion
 
+            services.AddHostedService<HostApplicationLifetimeEventsHostedService>();
+
             services.AddScoped<IServerInfoRepository, ServerInfoRepository>();
-            services.AddScoped<IServerHealthCheckWorker, ServerHealthCheckWorker>();
+            services.AddScoped<IServerHealthBeatWorker, ServerHealthBeatWorker>();
         }
     }
 }

@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\DotNetCraft.DevTools.Common\src\DotNetCraft.DevTools.Abstraction\DotNetCraft.DevTools.Abstraction.csproj" />
     <ProjectReference Include="..\DotNetCraft.DevTools.SimpleQueue.Core\DotNetCraft.DevTools.SimpleQueue.Core.csproj" />
   </ItemGroup>
 
